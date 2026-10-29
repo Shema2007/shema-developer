@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SUGAR-DEV — Christian Irasubiza Shema, Software Developer in Kigali, Rwanda.">
+  <title>SUGAR-DEV | Christian Irasubiza Shema · Software Developer</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    /* ===================================================
+       SUGAR-DEV — CYBERPUNK NEON THEME (KIGALI, RWANDA)
+       Developer: Christian Irasubiza Shema
+    =================================================== */
+    :root {
+      --bg-dark: #040d1a;
+      --bg-card: #09172a;
+      --bg-card-hover: #10243f;
+      --neon-green: #00e676;
+      --neon-blue: #00b0ff;
+      --neon-yellow: #ffee00;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-glow: #162c4a;
+      --transition: all 0.35s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ---------------- HEADER & SPA NAV ---------------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(4, 13, 26, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-glow);
+      padding: 16px 0;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--neon-green);
+      text-shadow: 0 0 12px var(--neon-green);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--neon-green);
+      text-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
+    }
+
+    .nav-cta {
+      background: rgba(0, 230, 118, 0.1);
+      color: var(--neon-green) !important;
+      border: 1px solid var(--neon-green);
+      padding: 8px 20px;
+      border-radius: 30px;
+      box-shadow: 0 0 10px rgba(0, 230, 118, 0.2);
+    }
+
+    .nav-cta:hover {
+      background: var(--neon-green) !important;
+      color: #040d1a !important;
+      box-shadow: 0 0 25px var(--neon-green);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* ---------------- HERO SECTION ---------------- */
+    .hero {
+      padding: 90px 0 65px;
+      position: relative;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .eyebrow {
+      color: var(--neon-green);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 230, 118, 0.1);
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 230, 118, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3.3rem;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--neon-green), var(--neon-blue), var(--neon-yellow));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .lead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      max-width: 540px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 35px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 26px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--neon-green);
+      color: #040d1a;
+      border: none;
+      box-shadow: 0 0 25px rgba(0, 230, 118, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 40px var(--neon-green);
+      background: #2aff8e;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border-glow);
+      color: #fff;
+      background: var(--bg-card);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--neon-blue);
+      box-shadow: 0 0 20px rgba(0, 176, 255, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      border: none;
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.35);
+    }
+
+    .btn-whatsapp:hover {
+      background: #2fe772;
+      box-shadow: 0 0 35px #25D366;
+      transform: translateY(-3px);
+      color: #fff;
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-tags span {
+      background: #09172a;
+      border: 1px solid #162c4a;
+      color: #cbd5e1;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* ---------------- NEON CIRCLE PORTRAIT ---------------- */
+    .hero-portrait-wrap {
+      width: 330px;
+      height: 330px;
+      position: relative;
+      margin: 0 auto;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      animation: sugarFloat 5s ease-in-out infinite;
+    }
+
+    .hero-portrait {
+      width: calc(100% - 16px);
+      height: calc(100% - 16px);
+      object-fit: cover;
+      /* Iyi position ituma umutwe n'amadarubindi bihagama neza mu ruziga */
+      object-position: center 12%;
+      border-radius: 50%;
+      border: 5px solid #071626;
+      position: relative;
+      z-index: 2;
+      box-shadow: 
+        0 0 25px var(--neon-green),
+        0 0 50px var(--neon-blue),
+        0 0 70px rgba(255, 60, 0, 0.4);
+      background: #09172a;
+    }
+
+    .portrait-ring {
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 3.5px solid var(--neon-green);
+      box-shadow: 0 0 28px var(--neon-green);
+      animation: sugarRingGlow 3s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    .portrait-badge {
+      position: absolute;
+      bottom: 6%;
+      right: -8px;
+      z-index: 5;
+      padding: 10px 18px;
+      background: #071626;
+      color: var(--neon-green);
+      border: 1.5px solid var(--neon-green);
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      box-shadow: 0 0 20px rgba(0, 230, 118, 0.45);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    @keyframes sugarFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+
+    @keyframes sugarRingGlow {
+      0% { border-color: var(--neon-green); box-shadow: 0 0 20px var(--neon-green); }
+      100% { border-color: var(--neon-yellow); box-shadow: 0 0 35px var(--neon-yellow); }
+    }
+
+    /* ---------------- STATS COUNTER ---------------- */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 18px;
+      padding: 25px;
+      margin: 30px 0 60px;
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      font-size: 2.3rem;
+      font-weight: 900;
+      color: var(--neon-green);
+      margin-bottom: 4px;
+    }
+
+    .stat-item p {
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* ---------------- SECTIONS & CARDS ---------------- */
+    .section {
+      padding: 85px 0;
+      border-top: 1px solid rgba(22, 44, 74, 0.6);
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 55px;
+    }
+
+    .section-heading h2 {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 26px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      padding: 34px;
+      border-radius: 18px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--neon-green);
+      background: var(--bg-card-hover);
+      box-shadow: 0 10px 30px rgba(0, 230, 118, 0.15);
+    }
+
+    .card-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 14px;
+      background: rgba(0, 230, 118, 0.12);
+      color: var(--neon-green);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      margin-bottom: 22px;
+    }
+
+    .card-icon.yellow { background: rgba(255, 238, 0, 0.12); color: var(--neon-yellow); }
+    .card-icon.blue { background: rgba(0, 176, 255, 0.12); color: var(--neon-blue); }
+
+    .card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* ---------------- CONTACT ITEMS ---------------- */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px;
+      background: #040d1a;
+      border: 1px solid var(--border-glow);
+      border-radius: 12px;
+      margin-bottom: 15px;
+      text-decoration: none;
+      color: #fff;
+      transition: var(--transition);
+    }
+
+    .contact-item:hover {
+      border-color: var(--neon-green);
+      transform: translateX(6px);
+      box-shadow: 0 0 15px rgba(0, 230, 118, 0.2);
+    }
+
+    .contact-item-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item-text span {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact-item-text strong {
+      font-size: 0.95rem;
+      color: #fff;
+      word-break: break-all;
+    }
+
+    /* ---------------- FORMS ---------------- */
+    .form-group {
+      margin-bottom: 18px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px;
+      background: #040d1a;
+      border: 1px solid var(--border-glow);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--neon-green);
+      box-shadow: 0 0 12px rgba(0, 230, 118, 0.3);
+    }
+
+    /* ---------------- FOOTER ---------------- */
+    .footer {
+      border-top: 1px solid var(--border-glow);
+      padding: 50px 0 30px;
+      text-align: center;
+      background: #020812;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--neon-green);
+    }
+
+    /* ---------------- RESPONSIVE (MOBILE) ---------------- */
+    @media (max-width: 850px) {
+      .hero-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .lead { margin: 0 auto 30px; }
+      .button-row { justify-content: center; }
+      .hero-tags { justify-content: center; }
+      .hero-portrait-wrap {
+        width: 270px;
+        height: 270px;
+        margin-top: 20px;
+      }
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: #071626;
+        padding: 25px;
+        border-bottom: 1px solid var(--border-glow);
+      }
+      .nav-links.active { display: flex; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAVIGATION -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="logo" href="#home">SUGAR<span>-DEV</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a class="nav-cta" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. HOME SECTION -->
+    <section class="hero" id="home">
+      <div class="container hero-layout">
+        <div>
+          <span class="eyebrow"><i class="fa-solid fa-code"></i> SOFTWARE DEVELOPER · KIGALI, RWANDA</span>
+          <h1>Ideas into <span class="gradient-text">digital reality.</span></h1>
+          <p class="lead">
+            I'm <strong>Christian Irasubiza Shema</strong>, a passionate software developer from Kigali. I build lightning-fast responsive websites, custom web applications, and management systems.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="#projects">Explore Projects <i class="fa-solid fa-arrow-right"></i></a>
+            <a class="btn btn-whatsapp" href="https://wa.me/250792773683" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+250792773683"><i class="fa-solid fa-phone"></i> Call Me</a>
+          </div>
+          <div class="hero-tags">
+            <span>Web Development</span>
+            <span>UI/UX</span>
+            <span>Software Systems</span>
+            <span>Kigali, Rwanda</span>
+          </div>
+        </div>
+
+        <!-- PORTRAIT WITH YOUR REAL PHOTO IN NEON CIRCLE -->
+        <div class="hero-portrait-wrap">
+          <div class="portrait-ring"></div>
+          <img src="assets/christian-portrait.png" 
+               alt="Christian Irasubiza Shema - SUGAR-DEV" 
+               class="hero-portrait" 
+               onerror="this.src='assets/christian-portrait.jpg'">
+          <div class="portrait-badge"><i class="fa-solid fa-code"></i> SUGAR-DEV</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <section class="container">
+      <div class="stats-bar">
+        <div class="stat-item">
+          <h3>100%</h3>
+          <p>Responsive Design</p>
+        </div>
+        <div class="stat-item">
+          <h3>Fast</h3>
+          <p>Speed & Performance</p>
+        </div>
+        <div class="stat-item">
+          <h3>24/7</h3>
+          <p>Support on WhatsApp</p>
+        </div>
+        <div class="stat-item">
+          <h3>Kigali</h3>
+          <p>Rwanda Tech Hub</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT SECTION -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">ABOUT ME</span>
+          <h2>Christian <span class="gradient-text">Irasubiza Shema</span></h2>
+          <p style="color: var(--text-muted);">Software Developer based in Kigali, Rwanda.</p>
+        </div>
+
+        <div class="grid-2" style="align-items: center;">
+          <div>
+            <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: #fff;">Turning ideas into clean code.</h3>
+            <p style="color: var(--text-muted); margin-bottom: 16px;">
+              I am dedicated to crafting reliable software solutions, elegant user interfaces, and high-converting websites.
+            </p>
+            <p style="color: var(--text-muted); margin-bottom: 25px;">
+              Whether you need an automated business management system, an e-commerce website with Mobile Money, or a company portal, I deliver with precision and speed.
+            </p>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <a class="btn btn-primary" href="#contact">Contact Christian <i class="fa-solid fa-arrow-right"></i></a>
+              <a class="btn btn-outline" href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a>
+            </div>
+          </div>
+
+          <div class="card" style="border-color: var(--neon-blue);">
+            <h3 style="margin-bottom: 16px; color: var(--neon-blue);"><i class="fa-solid fa-layer-group"></i> My Technology Stack</h3>
+            <div class="hero-tags" style="gap: 10px;">
+              <span>HTML5 & Modern CSS3</span>
+              <span>JavaScript (ES6+)</span>
+              <span>React.js</span>
+              <span>Node.js / Express</span>
+              <span>Python</span>
+              <span>Database Systems (SQL)</span>
+              <span>Git & GitHub</span>
+              <span>REST APIs</span>
+              <span>UI/UX Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SERVICES SECTION -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">SERVICES</span>
+          <h2>Digital solutions that <span class="gradient-text">deliver results</span></h2>
+          <p style="color: var(--text-muted);">Engineered for high performance, modern security, and seamless user experience.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
+            <h3>Website Development</h3>
+            <p>High-speed, responsive websites designed to rank high on search engines and convert visitors into clients.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon yellow"><i class="fa-solid fa-laptop-code"></i></div>
+            <h3>Web Applications</h3>
+            <p>Interactive web apps, customer portals, and dynamic tools tailored to automate daily business tasks.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon blue"><i class="fa-solid fa-boxes-stacked"></i></div>
+            <h3>Management Systems</h3>
+            <p>Database software for tracking stock, sales, human resources, and business operations securely.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon blue"><i class="fa-solid fa-cart-shopping"></i></div>
+            <h3>E-Commerce & MoMo</h3>
+            <p>Online shops with seamless cart checkout and MTN/Airtel Mobile Money payment integrations.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon yellow"><i class="fa-solid fa-mobile-screen"></i></div>
+            <h3>UI / UX Design</h3>
+            <p>Modern visual wireframing and prototyping to ensure intuitive, smooth customer navigation.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <h3>Support & Maintenance</h3>
+            <p>Continuous system updates, database backups, bug fixing, and technical consultation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PROJECTS SECTION -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">PORTFOLIO</span>
+          <h2>Featured <span class="gradient-text">recent projects</span></h2>
+          <p style="color: var(--text-muted);">Practical digital systems built for businesses.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+            <h3>Kigali E-Shop Portal</h3>
+            <p>An online marketplace platform featuring instant search, automated client orders, and mobile payments.</p>
+            <div style="margin-top: 20px;">
+              <a class="btn btn-outline" style="padding: 8px 18px; font-size: 0.85rem;" href="#contact">Inquire Details</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon yellow"><i class="fa-solid fa-warehouse"></i></div>
+            <h3>Inventory & Stock System</h3>
+            <p>Enterprise dashboard built for tracking stock quantities, sales receipts, and automated profit reports.</p>
+            <div style="margin-top: 20px;">
+              <a class="btn btn-outline" style="padding: 8px 18px; font-size: 0.85rem;" href="#contact">Inquire Details</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon blue"><i class="fa-solid fa-building"></i></div>
+            <h3>Corporate Brand Platform</h3>
+            <p>High-end corporate website engineered for top performance, search engine ranking (SEO), and conversion.</p>
+            <div style="margin-top: 20px;">
+              <a class="btn btn-outline" style="padding: 8px 18px; font-size: 0.85rem;" href="#contact">Inquire Details</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CONTACT SECTION -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">GET IN TOUCH</span>
+          <h2>Let's build your next <span class="gradient-text">project</span></h2>
+          <p style="color: var(--text-muted);">Available for projects, contracts, and full-time software engineering.</p>
+        </div>
+
+        <div class="grid-2" style="gap: 40px; align-items: flex-start;">
+          
+          <!-- DIRECT CONTACT DETAILS -->
+          <div class="card">
+            <h3 style="color: var(--neon-green); margin-bottom: 20px;">Christian Irasubiza Shema</h3>
+            
+            <!-- WhatsApp -->
+            <a class="contact-item" href="https://wa.me/250792773683" target="_blank">
+              <div class="contact-item-icon" style="background: rgba(37, 211, 102, 0.15); color: #25D366;">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div class="contact-item-text">
+                <span>WhatsApp (Direct Chat)</span>
+                <strong>+250 792 773 683</strong>
+              </div>
+            </a>
+
+            <!-- Phone Call -->
+            <a class="contact-item" href="tel:+250792773683">
+              <div class="contact-item-icon" style="background: rgba(0, 176, 255, 0.15); color: var(--neon-blue);">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contact-item-text">
+                <span>Phone Call</span>
+                <strong>0792773683 / +250 792 773 683</strong>
+              </div>
+            </a>
+
+            <!-- Email -->
+            <a class="contact-item" href="mailto:chrstianirasubizashema@gmail.com">
+              <div class="contact-item-icon" style="background: rgba(255, 238, 0, 0.15); color: var(--neon-yellow);">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-item-text">
+                <span>Email Address</span>
+                <strong>chrstianirasubizashema@gmail.com</strong>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a class="contact-item" href="https://www.linkedin.com" target="_blank">
+              <div class="contact-item-icon" style="background: rgba(10, 102, 194, 0.2); color: #0a66c2;">
+                <i class="fa-brands fa-linkedin"></i>
+              </div>
+              <div class="contact-item-text">
+                <span>Professional Network</span>
+                <strong>Connect on LinkedIn</strong>
+              </div>
+            </a>
+
+            <!-- Location -->
+            <div class="contact-item" style="cursor: default;">
+              <div class="contact-item-icon" style="background: rgba(0, 230, 118, 0.15); color: var(--neon-green);">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact-item-text">
+                <span>Location</span>
+                <strong>Kigali, Rwanda</strong>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CONTACT FORM -->
+          <div class="card" style="border-color: var(--neon-green);">
+            <form id="spaContactForm">
+              <div class="form-group">
+                <label>Amazina yawe (Your Name)</label>
+                <input type="text" placeholder="Christian..." required>
+              </div>
+              <div class="form-group">
+                <label>Email cyangwa Phone yawe</label>
+                <input type="text" placeholder="urugero@gmail.com cyangwa +250 7..." required>
+              </div>
+              <div class="form-group">
+                <label>Ubutumwa bwawe (Project Details)</label>
+                <textarea rows="4" placeholder="Sobanura muri make umushinga wifuza..." required></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit" style="width: 100%; justify-content: center;">
+                <i class="fa-solid fa-paper-plane"></i> Ohereza Ubutumwa (Send Message)
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <a class="logo" href="#home">SUGAR<span>-DEV</span></a>
+      <p style="color: var(--text-muted); margin: 15px 0;">Christian Irasubiza Shema · Software Developer in Kigali, Rwanda.</p>
+      
+      <!-- Social Buttons in Footer -->
+      <div style="display: flex; justify-content: center; gap: 15px; margin: 15px 0;">
+        <a class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;" href="https://wa.me/250792773683" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;" href="mailto:chrstianirasubizashema@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;" href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 20px;">
+        &copy; <span id="yearSpan"></span> SUGAR-DEV · Christian Irasubiza Shema. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // Set current year
+    document.getElementById('yearSpan').textContent = new Date().getFullYear();
+
+    // Mobile nav drawer
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // ScrollSpy: auto highlight menu links as you scroll
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.pageYOffset;
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 120;
+        const sectionId = current.getAttribute('id');
+        const link = document.querySelector('.nav-links a[href*=' + sectionId + ']');
+        if (link) {
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        }
+      });
+    });
+
+    // Form alert with your name
+    document.getElementById('spaContactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("✅ Murakoze cyane! Ubutumwa bwawe bwakiriwe neza kuri SUGAR-DEV. Christian Irasubiza Shema araza kukuvugisha kuri phone cyangwa WhatsApp vuba!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
